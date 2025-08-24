@@ -19,10 +19,9 @@ struct NamePage: View{
                 VStack {
                     TextField("Enter text here", text: $inputText)
                         .padding()
-                        .frame(width:200,height: 50)
-                        .multilineTextAlignment(.center)
-                        .font(.custom("Architype Stedelijk W00", size:24))
-                        .offset(y:550)
+//                        .frame(width:200,height: 50)
+//                        .multilineTextAlignment(.center)
+                        .font(.stedelijk(size:24))
                     Spacer()
                     //add functionality to store name or soemthing like that
                     NavigationLink {
