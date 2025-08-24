@@ -16,7 +16,7 @@ struct NamePage: View{
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea()
-                VStack{
+                VStack {
                     TextField("Enter text here", text: $inputText)
                         .padding()
                         .frame(width:200,height: 50)
@@ -25,16 +25,14 @@ struct NamePage: View{
                         .offset(y:550)
                     Spacer()
                     //add functionality to store name or soemthing like that
-                    NavigationLink(destination:NamePage()){
-                        Button(action: {
-                            print("Enter")
-                        }){
-                            Image("NextButton")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:200)
-                                .offset(y:-50)
-                        }
+                    NavigationLink {
+                        SelectionPage()
+                    } label: {
+                        Image("NextButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200)
+                            .offset(y:-50)
                     }
                 }
             }

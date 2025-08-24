@@ -14,18 +14,9 @@ struct SelectionPage: View{
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-            VStack{
-                Spacer()
-                NavigationLink(destination:NamePage()){
-                    Button(action: {
-                        print("Enter")
-                    }){
-                        Image("NextButton")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width:200)
-                    }
-                }
+            
+            HStack{
+                //add many button for stupid animals.
             }
         }
     }

@@ -13,18 +13,16 @@ struct StartScreen: View {
             ZStack{
                 Image("StartPage")
                     .resizable()
-                    .scaledToFill() //fix white space later
+                    .scaledToFill() // its fixed fr now
                     .ignoresSafeArea()
-                VStack{
-                    NavigationLink(destination:NamePage()){
-                        Button(action: {
-                            print("Enter")
-                        }){
-                            Image("StartButton")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width:200)
-                        }
+                VStack {
+                    NavigationLink {
+                        NamePage()
+                    } label: {
+                        Image("StartButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200)
                     }
                 }
             }
