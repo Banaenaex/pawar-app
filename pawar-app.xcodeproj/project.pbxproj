@@ -21,24 +21,19 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D966D0572E5CD2AB00D77A8F /* StartPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StartPage;
+			sourceTree = "<group>";
+		};
 		D9A795582E59560A006A9DDE /* ContentView */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ContentView;
 			sourceTree = "<group>";
 		};
-		D9A7955A2E595627006A9DDE /* StartScreen */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = StartScreen;
-			sourceTree = "<group>";
-		};
 		D9A7955C2E59563E006A9DDE /* NamePage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NamePage;
-			sourceTree = "<group>";
-		};
-		D9A7955D2E59565A006A9DDE /* ChooseAnimal */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChooseAnimal;
 			sourceTree = "<group>";
 		};
 		D9A795602E59566B006A9DDE /* MainMenu */ = {
@@ -71,6 +66,11 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		D9EEF4F42E5BF15600B30E0C /* ActionPage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ActionPage;
+			sourceTree = "<group>";
+		};
 		FE4F7FE22E3DB681007527BF /* pawar-app */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -95,18 +95,18 @@
 		FE4F7FD72E3DB681007527BF = {
 			isa = PBXGroup;
 			children = (
+				D9EEF4F42E5BF15600B30E0C /* ActionPage */,
 				D9A7956B2E596007006A9DDE /* SelectionPage */,
 				D9A795632E59568C006A9DDE /* CleanPage */,
 				D9A795622E595681006A9DDE /* GamePage */,
 				D9A795612E595677006A9DDE /* FeedPage */,
-				D9A7955D2E59565A006A9DDE /* ChooseAnimal */,
 				FE4F7FE22E3DB681007527BF /* pawar-app */,
 				FE4F7FE12E3DB681007527BF /* Products */,
 				D9A795582E59560A006A9DDE /* ContentView */,
-				D9A7955A2E595627006A9DDE /* StartScreen */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
 				D9A795602E59566B006A9DDE /* MainMenu */,
 				D9EEF4EC2E5B6E6500B30E0C /* Fonts */,
+				D966D0572E5CD2AB00D77A8F /* StartPage */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,16 +134,16 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				D966D0572E5CD2AB00D77A8F /* StartPage */,
 				D9A795582E59560A006A9DDE /* ContentView */,
-				D9A7955A2E595627006A9DDE /* StartScreen */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
-				D9A7955D2E59565A006A9DDE /* ChooseAnimal */,
 				D9A795602E59566B006A9DDE /* MainMenu */,
 				D9A795612E595677006A9DDE /* FeedPage */,
 				D9A795622E595681006A9DDE /* GamePage */,
 				D9A795632E59568C006A9DDE /* CleanPage */,
 				D9A7956B2E596007006A9DDE /* SelectionPage */,
 				D9EEF4EC2E5B6E6500B30E0C /* Fonts */,
+				D9EEF4F42E5BF15600B30E0C /* ActionPage */,
 				FE4F7FE22E3DB681007527BF /* pawar-app */,
 			);
 			name = "pawar-app";

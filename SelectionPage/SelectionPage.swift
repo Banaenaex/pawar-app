@@ -16,7 +16,9 @@ struct SelectionPage: View{
                 .ignoresSafeArea()
             
             HStack{
-                //add many button for stupid animals.
+//                NavigationLink{
+//                    ActionPage()
+//                }
             }
         }
     }

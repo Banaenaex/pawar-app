@@ -28,7 +28,7 @@ struct NamePage: View{
                     Spacer()
                     //add functionality to store name or soemthing like that
                     NavigationLink {
-                        SelectionPage()
+                        WelcomePage(name: name)
                     } label: {
                         Image("NextButton")
                             .resizable()
@@ -36,6 +36,7 @@ struct NamePage: View{
                             .frame(width: 200)
                             .offset(y:-50)
                     }
+                    .navigationBarBackButtonHidden(true)
                 }
             }
         }
