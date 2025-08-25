@@ -16,9 +16,23 @@ struct SelectionPage: View{
                 .ignoresSafeArea()
             
             HStack{
-//                NavigationLink{
-//                    ActionPage()
-//                }
+                NavigationLink{
+                    ActionPage()
+                } label: {
+                    Image("car")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 200, height: 200)
+                }
+                NavigationLink{
+                    ActionPage()
+                } label: {
+                    Image("doggo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 150, height: 150)
+                }
+                // only two animals because i have no time how am i getting 12 done in 2 weeks aint no way
             }
         }
     }
