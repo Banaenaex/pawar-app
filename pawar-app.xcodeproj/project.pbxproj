@@ -21,6 +21,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		D93753C72E5D5B2100706702 /* HomePage */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = HomePage;
+			sourceTree = "<group>";
+		};
 		D966D0572E5CD2AB00D77A8F /* StartPage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = StartPage;
@@ -34,11 +39,6 @@
 		D9A7955C2E59563E006A9DDE /* NamePage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NamePage;
-			sourceTree = "<group>";
-		};
-		D9A795602E59566B006A9DDE /* MainMenu */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MainMenu;
 			sourceTree = "<group>";
 		};
 		D9A795612E595677006A9DDE /* FeedPage */ = {
@@ -104,9 +104,9 @@
 				FE4F7FE12E3DB681007527BF /* Products */,
 				D9A795582E59560A006A9DDE /* ContentView */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
-				D9A795602E59566B006A9DDE /* MainMenu */,
 				D9EEF4EC2E5B6E6500B30E0C /* Fonts */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
+				D93753C72E5D5B2100706702 /* HomePage */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,10 +134,10 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				D93753C72E5D5B2100706702 /* HomePage */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
 				D9A795582E59560A006A9DDE /* ContentView */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
-				D9A795602E59566B006A9DDE /* MainMenu */,
 				D9A795612E595677006A9DDE /* FeedPage */,
 				D9A795622E595681006A9DDE /* GamePage */,
 				D9A795632E59568C006A9DDE /* CleanPage */,
