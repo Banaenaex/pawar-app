@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SelectionPage: View{
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         ZStack{
             Image("SelectionPage")
@@ -33,6 +34,16 @@ struct SelectionPage: View{
                         .frame(width: 150, height: 150)
                 }
                 // only two animals because i have no time how am i getting 12 done in 2 weeks aint no way
+            }
+            VStack{
+                Spacer()
+                Button(action: { dismiss() }){
+                    Image("BackButton")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width:150)
+                        .offset(y:-100)
+                }
             }
         }
     }
