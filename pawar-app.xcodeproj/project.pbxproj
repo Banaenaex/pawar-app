@@ -6,14 +6,7 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		D92B0FDC2E6B35BA0011EE6B /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B0FD92E6B35BA0011EE6B /* Cat.swift */; };
-		D92B0FDD2E6B35BA0011EE6B /* CubeTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B0FDA2E6B35BA0011EE6B /* CubeTest.swift */; };
-/* End PBXBuildFile section */
-
 /* Begin PBXFileReference section */
-		D92B0FD92E6B35BA0011EE6B /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
-		D92B0FDA2E6B35BA0011EE6B /* CubeTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTest.swift; sourceTree = "<group>"; };
 		FE4F7FE02E3DB681007527BF /* pawar-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pawar-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -31,6 +24,11 @@
 		D92B0FDE2E6B35C20011EE6B /* Assets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		D92B0FEE2E6BE7590011EE6B /* Entities */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		D966D0572E5CD2AB00D77A8F /* StartPage */ = {
@@ -99,18 +97,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D92B0FDB2E6B35BA0011EE6B /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				D92B0FD92E6B35BA0011EE6B /* Cat.swift */,
-				D92B0FDA2E6B35BA0011EE6B /* CubeTest.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		FE4F7FD72E3DB681007527BF = {
 			isa = PBXGroup;
 			children = (
+				D92B0FEE2E6BE7590011EE6B /* Entities */,
 				D92B0FDE2E6B35C20011EE6B /* Assets */,
 				D9EEF4F42E5BF15600B30E0C /* ActionPage */,
 				D9A7956B2E596007006A9DDE /* SelectionPage */,
@@ -123,7 +113,6 @@
 				D9A7955C2E59563E006A9DDE /* NamePage */,
 				D9EEF4EC2E5B6E6500B30E0C /* Fonts */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
-				D92B0FDB2E6B35BA0011EE6B /* Entities */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +141,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D92B0FDE2E6B35C20011EE6B /* Assets */,
+				D92B0FEE2E6BE7590011EE6B /* Entities */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
 				D9A795582E59560A006A9DDE /* ContentView */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
@@ -219,8 +209,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D92B0FDC2E6B35BA0011EE6B /* Cat.swift in Sources */,
-				D92B0FDD2E6B35BA0011EE6B /* CubeTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,13 @@
 import SwiftUI
 import RealityKit
 import ARKit
+import Combine
 
 struct ActionPage: View {
     // 1.
     @Binding var isPresented: Bool
     // 2.
-    @State var modelName: String = "lowpolycar1"
+    @State var modelName: String = "car"
     var body: some View {
         ZStack(alignment: .bottom){
             ARViewContainer(modelName: $modelName, isPresented: .constant(true))
@@ -44,11 +45,19 @@ struct ActionPage: View {
             // 2.
             guard let modelEntity = try? Entity.loadModel(named: modelName) else { return }
             
+            // scale down
+            modelEntity.scale = SIMD3<Float>(repeating: 0.3)
+            
+            // collision
+            modelEntity.generateCollisionShapes(recursive: true)
+            
             // 3.
             anchorEntity.addChild(modelEntity)
             
             // 4.
             uiView.scene.addAnchor(anchorEntity)
+            
+        
         }
     }
 }
