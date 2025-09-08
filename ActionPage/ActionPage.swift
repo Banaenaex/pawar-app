@@ -10,8 +10,15 @@ import RealityKit
 import ARKit
 import Combine
 
+
 struct ARViewContainer: UIViewRepresentable {
     @Binding var modelName: String
+    
+    // Instantiate and return a Coordinator object
+    func makeCoordinator() -> Coordinator {
+        return Coordinator()
+    }
+    
     func makeUIView(context: Context) -> ARView {
         let arView = ARView(frame: .zero)
         
@@ -50,12 +57,36 @@ struct ARViewContainer: UIViewRepresentable {
         // 4.
         uiView.scene.addAnchor(anchorEntity)
     }
+    
+    // coordinator
+    class Coordinator: NSObject {
+        var view: ARView?
+            
+        @objc
+        func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
+            // Check if there is a view to work with
+            guard let view = self.view else { return }
+
+            // Obtain the location of a tap or touch gesture
+            let tapLocation = recognizer!.location(in: view)
+
+            // Checking if there's an entity at the tapped location within the view
+            if let entity = view.entity(at: tapLocation) as? ModelEntity {
+      
+                // Check if this entity is anchored to an anchor
+                    if let anchorEntity = entity.anchor {
+                        // Remove the model from the scene
+                        anchorEntity.removeFromParent()
+                    }
+            }
+        }
+      
+    }
+    
 }
 
 struct ActionPage: View {
-    // 1.
-    @Binding var isPresented: Bool
-    // 2.
+    // model
     @State var modelName: String = "car"
     var body: some View {
         ZStack(alignment: .bottom){
@@ -69,5 +100,5 @@ struct ActionPage: View {
 }
 
 #Preview {
-    ActionPage(isPresented: .constant(true))
+    ActionPage()
 }

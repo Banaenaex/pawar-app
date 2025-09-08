@@ -20,6 +20,7 @@ struct ActionView: View {
     }
 }
 
+// healthbar
 struct HealthBar: View {
     @State private var health: CGFloat = 1.0
     @State private var isPaused = false
@@ -102,12 +103,14 @@ struct HealthBar: View {
 
 struct ActionBar: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var isPresented = false
+    
     var body: some View {
         VStack{
             HStack{
                 // feedpage
                 NavigationLink{
-                    FeedPage(isPresented: .constant(true))
+                    FeedPage(isPresented: $isPresented)
                 } label:{
                     Image("FeedButton")
                         .resizable()

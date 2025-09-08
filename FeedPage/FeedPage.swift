@@ -5,6 +5,7 @@
 //  Created by T Krobot on 23/8/25.
 //
 
+
 import SwiftUI
 import ARKit
 import RealityKit
@@ -14,36 +15,30 @@ struct FoodBar: View {
     var body: some View {
         VStack{
             HStack{
-                // feedpage
-                NavigationLink{
-                    FeedPage(isPresented: .constant(true))
-                } label:{
-                    Image("FeedButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150)
+                // food
+                Button{
+                    
                 }
-                // gamepage
-                NavigationLink{
-                    GamePage()
-                } label:{
-                    Image("PlayButton")
+                    label:{
+                    Image("FishButton")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 150)
+                        .frame(width: 120)
+                }
+                    
+                // drink
+                Button{
+                    
+                }
+                    label:{
+                    Image("WaterButton")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120)
                 }
                 
             }
             HStack{
-                // cleanpage
-                NavigationLink{
-                    CleanPage()
-                } label:{
-                    Image("CleanButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 150)
-                }
                 // back button
                 Button(action: { dismiss() }){
                     Image("BackButton")

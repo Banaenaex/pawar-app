@@ -23,7 +23,7 @@ struct SelectionPage: View{
                         .frame(width:geometry.size.width * 0.7, height: geometry.size.height*0.5, alignment: .center)
                     HStack{
                         NavigationLink{
-                            ActionPage(isPresented: .constant(true))
+                            ActionPage()
                         } label: {
                             Image("car")
                                 .resizable()
@@ -31,7 +31,7 @@ struct SelectionPage: View{
                                 .frame(width: 200, height: 200)
                         }
                         NavigationLink{
-                            ActionPage(isPresented: .constant(true))
+                            ActionPage()
                         } label: {
                             Image("doggo")
                                 .resizable()
@@ -39,6 +39,7 @@ struct SelectionPage: View{
                                 .frame(width: 150, height: 150)
                         }
                         // only two animals because i have no time how am i getting 12 done in 2 weeks aint no way
+                        // make that one.
                     }
                     VStack{
                         Spacer()
