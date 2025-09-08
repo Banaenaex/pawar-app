@@ -49,7 +49,7 @@ struct ARViewContainer: UIViewRepresentable {
         for animationResource in modelEntity.availableAnimations {
             print("Found animation: \(String(describing: animationResource.name))")
             // You can then play this animation:
-            // modelEntity.playAnimation(animationResource)
+//             modelEntity.playAnimation(animationResource)
         }
 //        }
 

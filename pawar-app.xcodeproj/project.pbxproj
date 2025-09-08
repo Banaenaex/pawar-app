@@ -36,11 +36,6 @@
 			path = StartPage;
 			sourceTree = "<group>";
 		};
-		D9A795582E59560A006A9DDE /* ContentView */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ContentView;
-			sourceTree = "<group>";
-		};
 		D9A7955C2E59563E006A9DDE /* NamePage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = NamePage;
@@ -109,7 +104,6 @@
 				D9A795612E595677006A9DDE /* FeedPage */,
 				FE4F7FE22E3DB681007527BF /* pawar-app */,
 				FE4F7FE12E3DB681007527BF /* Products */,
-				D9A795582E59560A006A9DDE /* ContentView */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
 				D9EEF4EC2E5B6E6500B30E0C /* Fonts */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
@@ -143,7 +137,6 @@
 				D92B0FDE2E6B35C20011EE6B /* Assets */,
 				D92B0FEE2E6BE7590011EE6B /* Entities */,
 				D966D0572E5CD2AB00D77A8F /* StartPage */,
-				D9A795582E59560A006A9DDE /* ContentView */,
 				D9A7955C2E59563E006A9DDE /* NamePage */,
 				D9A795612E595677006A9DDE /* FeedPage */,
 				D9A795622E595681006A9DDE /* GamePage */,
