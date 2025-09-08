@@ -38,7 +38,7 @@ struct ARViewContainer: UIViewRepresentable {
         guard let modelEntity = try? Entity.loadModel(named: modelName) else { return }
         
         // scale down
-//            modelEntity.scale = SIMD3<Float>(repeating: 0.3)
+        //            modelEntity.scale = SIMD3<Float>(repeating: 0.3)
         
         // collisions
         modelEntity.generateCollisionShapes(recursive: true)
@@ -46,81 +46,62 @@ struct ARViewContainer: UIViewRepresentable {
         // animations testing
 //        for anim in modelEntity.availableAnimations {
 //            modelEntity.playAnimation(anim.repeat(duration: 10), transitionDuration: 1.25, startsPaused: false)
-        for animationResource in modelEntity.availableAnimations {
-            print("Found animation: \(String(describing: animationResource.name))")
-            // You can then play this animation:
-//             modelEntity.playAnimation(animationResource)
+//            for animationResource in modelEntity.availableAnimations {
+//                print("Found animation: \(String(describing: animationResource.name))")
+//                // You can then play this animation:
+//                //             modelEntity.playAnimation(animationResource)
+//            }
+            //        }
+            
+            // 3.
+            anchorEntity.addChild(modelEntity)
+            
+            // gestures
+            uiView.installGestures([.all], for: modelEntity as Entity & HasCollision)
+            
+            // 4.
+            uiView.scene.addAnchor(anchorEntity)
         }
-//        }
-
-        // 3.
-        anchorEntity.addChild(modelEntity)
         
-        // gestures
-        uiView.installGestures([.all], for: modelEntity as Entity & HasCollision)
-        
-        // 4.
-        uiView.scene.addAnchor(anchorEntity)
-    }
-    
-    // coordinator
-    class Coordinator: NSObject {
-        var view: ARView?
-//        var anchor: AnchorEntity?
-//        var root: Entity?
-//        
-//        func playNamedAnimation(_ name: String) {
-//            guard let root else { return }
-//        // 1) Try timeline on root
-//        if root.availableAnimations.contains(where: { $0.name == name }) {
-//            _ = root.playAnimation(named: name, transitionDuration: 0.05, startsPaused: false)
-//            return
-//        }
-//
-//        // 2) Otherwise find the child that owns that animation and play it there
-//            if let owner = root.findEntity(named: name) {
-//            _ = owner.playAnimation(named: name, transitionDuration: 0.05, startsPaused: false)
-//            return
-//        }
-        // test interaction
-        @objc
-        func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
-            // Check if there is a view to work with
-            guard let view = self.view else { return }
-
-            // Obtain the location of a tap or touch gesture
-            let tapLocation = recognizer!.location(in: view)
-
-            // Checking if there's an entity at the tapped location within the view
-            if let entity = view.entity(at: tapLocation) as? ModelEntity {
-      
-                // Check if this entity is anchored to an anchor
+        // coordinator
+        class Coordinator: NSObject {
+            var view: ARView?
+            
+            // test interaction
+            @objc
+            func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
+                // Check if there is a view to work with
+                guard let view = self.view else { return }
+                
+                // Obtain the location of a tap or touch gesture
+                let tapLocation = recognizer!.location(in: view)
+                
+                // Checking if there's an entity at the tapped location within the view
+                if let entity = view.entity(at: tapLocation) as? ModelEntity {
+                    
+                    // Check if this entity is anchored to an anchor
                     if let anchorEntity = entity.anchor {
                         // Remove the model from the scene
                         anchorEntity.removeFromParent()
                     }
+                }
             }
         }
-      
     }
     
-    
-    
-}
-
 struct ActionPage: View {
-    // model
-    @State var modelName: String = "carwanim1"
-    var body: some View {
-        ZStack(alignment: .bottom){
-            ARViewContainer(modelName: $modelName)
-            
-            ActionBar()
+        // model
+        @State var modelName: String = "defaultcar"
+        var body: some View {
+            ZStack(alignment: .bottom){
+                ARViewContainer(modelName: $modelName)
+                
+                ActionBar()
+            }
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarBackButtonHidden(true)
         }
-        .edgesIgnoringSafeArea(.all)
-        .navigationBarBackButtonHidden(true)
     }
-}
 
 #Preview {
     ActionPage()

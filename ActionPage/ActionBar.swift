@@ -131,7 +131,7 @@ struct ActionBar: View {
             HStack{
                 // cleanpage
                 NavigationLink{
-                    CleanPage()
+                    CleanPage(isPresented: $isPresented)
                 } label:{
                     Image("CleanButton")
                         .resizable()

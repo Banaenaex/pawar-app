@@ -12,12 +12,13 @@ import RealityKit
 
 struct FoodBar: View {
     @Environment(\.dismiss) private var dismiss
+    var onSelectModel: (String) -> Void
     var body: some View {
         VStack{
             HStack{
                 // food
                 Button{
-                    // trigger
+                    onSelectModel("fedcat")
                 }
                     label:{
                     Image("FishButton")
@@ -28,7 +29,7 @@ struct FoodBar: View {
                     
                 // drink
                 Button{
-                    // trigger
+                    onSelectModel("hydratedcar")
                 }
                     label:{
                     Image("WaterButton")
@@ -59,17 +60,19 @@ struct FoodBar: View {
 
 struct FeedPage: View {
     @Binding var isPresented: Bool
-    @State var modelName: String = "carwanim1"
+    @State var modelName: String = "fedcar"
+    
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelName: $modelName)
                 .ignoresSafeArea(edges: .all)
             
-            FoodBar()
+            FoodBar { selectedModel in
+                modelName = selectedModel
+            }
         }
     }
 }
-
 
 #Preview {
     FeedPage(isPresented: .constant(true))
