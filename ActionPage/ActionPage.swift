@@ -43,10 +43,15 @@ struct ARViewContainer: UIViewRepresentable {
         // collisions
         modelEntity.generateCollisionShapes(recursive: true)
         
-        // animations
-        for anim in modelEntity.availableAnimations {
-            modelEntity.playAnimation(anim.repeat(duration: 10), transitionDuration: 1.25, startsPaused: false)
+        // animations testing
+//        for anim in modelEntity.availableAnimations {
+//            modelEntity.playAnimation(anim.repeat(duration: 10), transitionDuration: 1.25, startsPaused: false)
+        for animationResource in modelEntity.availableAnimations {
+            print("Found animation: \(String(describing: animationResource.name))")
+            // You can then play this animation:
+            // modelEntity.playAnimation(animationResource)
         }
+//        }
 
         // 3.
         anchorEntity.addChild(modelEntity)
@@ -61,7 +66,23 @@ struct ARViewContainer: UIViewRepresentable {
     // coordinator
     class Coordinator: NSObject {
         var view: ARView?
-            
+//        var anchor: AnchorEntity?
+//        var root: Entity?
+//        
+//        func playNamedAnimation(_ name: String) {
+//            guard let root else { return }
+//        // 1) Try timeline on root
+//        if root.availableAnimations.contains(where: { $0.name == name }) {
+//            _ = root.playAnimation(named: name, transitionDuration: 0.05, startsPaused: false)
+//            return
+//        }
+//
+//        // 2) Otherwise find the child that owns that animation and play it there
+//            if let owner = root.findEntity(named: name) {
+//            _ = owner.playAnimation(named: name, transitionDuration: 0.05, startsPaused: false)
+//            return
+//        }
+        // test interaction
         @objc
         func handleLongPress(_ recognizer: UITapGestureRecognizer? = nil) {
             // Check if there is a view to work with
@@ -83,11 +104,13 @@ struct ARViewContainer: UIViewRepresentable {
       
     }
     
+    
+    
 }
 
 struct ActionPage: View {
     // model
-    @State var modelName: String = "car"
+    @State var modelName: String = "carwanim1"
     var body: some View {
         ZStack(alignment: .bottom){
             ARViewContainer(modelName: $modelName)

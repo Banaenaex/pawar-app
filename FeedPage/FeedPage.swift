@@ -17,7 +17,7 @@ struct FoodBar: View {
             HStack{
                 // food
                 Button{
-                    
+                    // trigger
                 }
                     label:{
                     Image("FishButton")
@@ -28,7 +28,7 @@ struct FoodBar: View {
                     
                 // drink
                 Button{
-                    
+                    // trigger
                 }
                     label:{
                     Image("WaterButton")
@@ -59,7 +59,7 @@ struct FoodBar: View {
 
 struct FeedPage: View {
     @Binding var isPresented: Bool
-    @State var modelName: String = "car"
+    @State var modelName: String = "carwanim1"
     var body: some View {
         ZStack(alignment: .bottom) {
             ARViewContainer(modelName: $modelName)
